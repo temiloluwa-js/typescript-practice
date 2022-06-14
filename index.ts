@@ -1,5 +1,3 @@
-function greet(person: string, date: Date){
-    console.log(`Hello ${person}, today is ${date}`)
+function addition(num1: number, num2: number): number{
+    return 26
 }
-
-let myName: string = "Hello"
