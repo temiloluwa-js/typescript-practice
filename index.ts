@@ -1,3 +1,11 @@
-function addition(num1: number, num2: number): number{
-    return 26
+interface User {
+    x: number;
+    y: number;
 }
+
+type Userer = {
+    x: number;
+    y: number
+}
+
+const letter = <string>"1"
