@@ -8,4 +8,13 @@ type Userer = {
     y: number
 }
 
-const letter = <string>"1"
+function literal(x: string, answer: boolean){
+
+}
+
+literal("a", 2>3)
+
+function liveDangerously(x?:number | null){
+    console.log(x!.toFixed())
+}
+
