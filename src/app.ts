@@ -24,8 +24,8 @@ form.addEventListener('submit', (e: Event) => {
 
 class Invoice {
     client: string;
-    details: string;
-    amount: number;
+    readonly details: string;
+    public amount: number;
 
     constructor(c: string, d: string, a: number){
         this.client = c
@@ -40,7 +40,11 @@ class Invoice {
 
 const invOne = new Invoice('mario', 'works on mario website', 250)
 const invTwo = new Invoice('luigi', 'works on luigi website', 200)
-console.log(invOne, invTwo)
+
 
 let invoices: Invoice[] = [];
 invoices.push(invOne, invTwo)
+
+invoices.forEach(inv => {
+    console.log(inv.client, inv.details, inv.amount, inv.format())
+})

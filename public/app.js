@@ -25,6 +25,8 @@ class Invoice {
 }
 const invOne = new Invoice('mario', 'works on mario website', 250);
 const invTwo = new Invoice('luigi', 'works on luigi website', 200);
-console.log(invOne, invTwo);
 let invoices = [];
 invoices.push(invOne, invTwo);
+invoices.forEach(inv => {
+    console.log(inv.client, inv.details, inv.amount, inv.format());
+});
