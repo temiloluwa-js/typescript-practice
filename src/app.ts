@@ -3,7 +3,7 @@
 // const form = 
 
 // const form = document.querySelector('form')!
-
+import { Invoice } from "./classes/invoice.js"
 const form = document.querySelector('.new-item-form') as HTMLFormElement
 // console.log(form.children)
 

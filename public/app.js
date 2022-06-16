@@ -1,8 +1,8 @@
-"use strict";
 // const anchor = document.querySelector("a")!;
 // console.log(anchor.href);
 // const form = 
 // const form = document.querySelector('form')!
+import { Invoice } from "./classes/invoice.js";
 const form = document.querySelector('.new-item-form');
 // console.log(form.children)
 const type = document.querySelector('#type');
@@ -13,16 +13,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
-class Invoice {
-    constructor(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
-    format() {
-        return `${this.client} breh ${this.details} breh ${this.amount}`;
-    }
-}
 const invOne = new Invoice('mario', 'works on mario website', 250);
 const invTwo = new Invoice('luigi', 'works on luigi website', 200);
 let invoices = [];

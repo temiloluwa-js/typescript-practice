@@ -1,4 +1,4 @@
-class Invoice {
+export class Invoice {
     client: string;
     readonly details: string;
     public amount: number;
