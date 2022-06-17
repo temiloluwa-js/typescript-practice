@@ -1,4 +1,5 @@
-export class Invoice {
+import { HasFomatter } from "../interfaces/HasFormatter.js";
+export class Invoice implements HasFomatter{
     client: string;
     readonly details: string;
     public amount: number;
