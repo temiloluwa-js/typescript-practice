@@ -1,13 +1,14 @@
 import { Invoice } from "./classes/invoice.js";
 import { Payment } from "./classes/payment.js";
+import { listTemplate } from "./classes/listTemplate.js";
 const form = document.querySelector('.new-item-form');
-let docOne;
-let docTwo;
-docOne = new Invoice('yoshi', 'web work', 250);
-docTwo = new Payment('mario', 'ploughing work', 300);
-let docs = [];
-docs.push(docOne);
-docs.push(docTwo);
+// let docOne: HasFomatter;
+// let docTwo: HasFomatter;
+// docOne = new Invoice('yoshi', 'web work', 250)
+// docTwo = new Payment('mario', 'ploughing work', 300)
+// let docs: HasFomatter[] = []
+// docs.push(docOne)
+// docs.push(docTwo)
 const type = document.querySelector('#type');
 const tofrom = document.querySelector('#tofrom');
 const details = document.querySelector('#details');
@@ -21,8 +22,10 @@ form.addEventListener('submit', (e) => {
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    console.log(doc);
+    list.render(doc, type.value, 'end');
 });
+const ul = document.querySelector('ul');
+const list = new listTemplate(ul);
 // const invOne = new Invoice('mario', 'works on mario website', 250)
 // const invTwo = new Invoice('luigi', 'works on luigi website', 200)
 // let invoices: Invoice[] = [];
