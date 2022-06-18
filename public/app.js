@@ -49,3 +49,10 @@ const obj = {
     data: { name: 'hello' }
 };
 console.log(obj);
+//TUPLES
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'breh'];
+let tup = ['yoshi', 20, true];
+tup[0] = 'ken';

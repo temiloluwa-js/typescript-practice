@@ -94,3 +94,12 @@ const obj: Resource<{name: string}> = {
 }
 
 console.log(obj)
+
+//TUPLES
+let arr = ['ryu', 25, true];
+arr[0] = false
+arr[1] = 'yoshi'
+arr = [30, false, 'breh']
+
+let tup: [string, number, boolean] = ['yoshi', 20, true]
+tup[0] = 'ken'
