@@ -33,6 +33,14 @@ form.addEventListener('submit', (e: Event) => {
 const ul  = document.querySelector('ul')!
 const list = new listTemplate(ul)
 
+//generics
+const addUID = <T extends {name: string}>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid}
+}
+
+let docOne = addUID({name: 'yoshi', age: 40})
+console.log(docOne)
 
 // const invOne = new Invoice('mario', 'works on mario website', 250)
 // const invTwo = new Invoice('luigi', 'works on luigi website', 200)
@@ -66,3 +74,23 @@ const list = new listTemplate(ul)
 // }
 
 // console.log(me)
+
+interface Resource<T>{
+    uid: number;
+    resourceTYpe: ResourceType;
+    resourceName: string;
+    data: T;
+}
+
+//ENUMS
+enum ResourceType {BOOK, AUTHOR, FILM, DIRECTOR, PERSON}
+
+
+const obj: Resource<{name: string}> = {
+    uid: 1,
+    resourceName: 'yoshi',
+    resourceTYpe: ResourceType.BOOK,
+    data: {name: 'hello'}
+}
+
+console.log(obj)

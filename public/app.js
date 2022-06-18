@@ -26,29 +26,26 @@ form.addEventListener('submit', (e) => {
 });
 const ul = document.querySelector('ul');
 const list = new listTemplate(ul);
-// const invOne = new Invoice('mario', 'works on mario website', 250)
-// const invTwo = new Invoice('luigi', 'works on luigi website', 200)
-// let invoices: Invoice[] = [];
-// invoices.push(invOne, invTwo)
-// invoices.forEach(inv => {
-//     console.log(inv.client, inv.details, inv.amount, inv.format())
-// })
-// const list: string[] = []
-// interface isPerson {
-//     name: string,
-//     age: number,
-//     speak(a: string): void,
-//     spend(a: number): number
-// }
-// const me: isPerson = {
-//     name: 'shaun',
-//     age: 30,
-//     speak(text: string): void{
-//         console.log(text)
-//     },
-//     spend(money: number): number{
-//         console.log(`i spent ${money}`)
-//         return money
-//     }
-// }
-// console.log(me)
+//generics
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: 'yoshi', age: 40 });
+console.log(docOne);
+//ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const obj = {
+    uid: 1,
+    resourceName: 'yoshi',
+    resourceTYpe: ResourceType.BOOK,
+    data: { name: 'hello' }
+};
+console.log(obj);
